@@ -13,17 +13,16 @@ def first_route():
     return {'message': 'Hello World'}
 
 
-@app.get('/return_html', status_code=HTTPStatus.OK, response_class=HTMLResponse)
+@app.get('/html_response', status_code=HTTPStatus.OK, response_class=HTMLResponse)
 def second_route():
-    return ''' 
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Hello World</title>
-        </head>
-        <body>
-            <p>Hello World!</p>
-        </body>
-        </html>
-    '''
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Response - fastAPI</title>
+</head>
+<body>
+    <p>Hello World!</p>
+</body>
+</html>"""
